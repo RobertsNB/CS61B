@@ -14,7 +14,7 @@ public class TestReadPlanets {
         String planetsTxtPath = "./data/planets.txt";
         /* If the following line fails to compile, you probably need to make
          * a certain method static! */
-        Planet[] actualOutput = NBody.readPlanets(planetsTxtPath);
+        Body[] actualOutput = NBody.readBodies(planetsTxtPath);
 
         /* Check the simple things: */
         if (actualOutput == null) {
@@ -31,7 +31,7 @@ public class TestReadPlanets {
         boolean foundSun = false;
         boolean foundVenus = false;
         boolean randomChecksOkay = true;
-        for (Planet p : actualOutput) {
+        for (Body p : actualOutput) {
             if ("earth.gif".equals(p.imgFileName)) {
                 foundEarth = true;
                 if (!doubleEquals(p.xxPos, 1.4960e+11, 0.01)) {
